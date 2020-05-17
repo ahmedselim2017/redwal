@@ -100,7 +100,7 @@ func get_url(subreddit string, mode string, filter_nsfw bool) (string, error) {
 			width := child.Data.Preview.Images[0].Source.Width
 			height := child.Data.Preview.Images[0].Source.Height
 
-			// Ignore filtered and landscape images
+			// Ignore filtered and portrait images
 			if (filter_nsfw && child.Data.Over18) || width < height {
 				continue
 			} else {
